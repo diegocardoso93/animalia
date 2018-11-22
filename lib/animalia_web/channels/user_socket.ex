@@ -3,6 +3,7 @@ defmodule AnimaliaWeb.UserSocket do
 
   ## Channels
   # channel "room:*", AnimaliaWeb.RoomChannel
+  channel "game:room", AnimaliaWeb.RoomChannel
 
   ## Transports
   transport :websocket, Phoenix.Transports.WebSocket
@@ -19,7 +20,8 @@ defmodule AnimaliaWeb.UserSocket do
   #
   # See `Phoenix.Token` documentation for examples in
   # performing token verification on connect.
-  def connect(_params, socket) do
+  def connect(%{"user_id" => user_id}, socket) do
+    socket = assign(socket, :player_id, user_id)
     {:ok, socket}
   end
 

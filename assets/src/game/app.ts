@@ -6,8 +6,8 @@ import "phaser"
 import { Game } from "./game"
 import { Socket } from "phoenix"
 
-import { MainMenuScene } from "./mainMenuScene"
-import { GameScene } from "./gameScene"
+import { SceneMenu } from "./sceneMenu"
+import { SceneGame } from "./sceneGame"
 
 declare var window
 
@@ -20,7 +20,7 @@ class gameBootstrap {
     zoom: 3,
     type: Phaser.AUTO,
     parent: "game",
-    scene: [MainMenuScene, GameScene],
+    scene: [SceneMenu, SceneGame],
     input: {
       keyboard: true,
       mouse: true,

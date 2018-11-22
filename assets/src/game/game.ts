@@ -12,6 +12,6 @@ export class Game extends Phaser.Game {
     this.playerId = new Date().getTime()
     socket.connect({user_id: this.playerId})
 
-    this.channel = socket.channel("games:lobby", {})
+    this.channel = socket.channel("game:room", {})
   }
 }

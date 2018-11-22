@@ -14,6 +14,8 @@ defmodule Animalia.Application do
       supervisor(AnimaliaWeb.Endpoint, []),
       # Start your own worker by calling: Animalia.Worker.start_link(arg1, arg2, arg3)
       # worker(Animalia.Worker, [arg1, arg2, arg3]),
+      worker(Animalia.PlayerState, []),
+      worker(Animalia.ObjectState, []),
     ]
 
     # See https://hexdocs.pm/elixir/Supervisor.html
